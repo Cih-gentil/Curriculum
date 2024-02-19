@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href=" css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Curriculo</title>
+</head>
+
+<body>
+    <main class="containerPrincipal">
+        <h1 id="nome"><span th:text=${dados.nome}></span></h1>
+        <div class="dadosPessoais">
+            <img class="imagemPerfil" src="img/cintia.jpeg" alt="foto curriculo"><br>
+            <article>
+                <p><i class="fas fa-envelope"></i> <span th:text="${dados.email}"></span></p>
+                <hr>
+                <p><i class="fas fa-phone"></i> <span th:text="${dados.telefone}"></span></p>
+                <hr>
+                <p><i class="fas fa-calendar-alt"></i> <span
+                        th:text="${#temporals.format(dados.dataNascimento, 'dd/MM/yyyy')}"></span>
+                </p>
+                <hr>
+                <p><i class="fab fa-linkedin"></i> <a
+                        th:href="${dados.linkedin}">https://www.linkedin.com/in/cih-lucena/</a>
+                </p>
+                <hr>
+                <p><i class="fab fa-github"></i> <a th:href="${dados.github}">https://github.com/Cih-gentil</a></p>
+            </article><br>
+        </div>
+        <article  class="borda">
+            
+                <h3>Experiência Profissional</h3>
+                <hr>
+                <p><span class="span1" th:text="${experiencia.local}"></span> <span class="span2">Auxiliar de
+                        escritório</span> </p>
+                <p><i class="fas fa-calendar-alt"></i> <span class="span1" th:text="${experiencia.periodo}"></span>
+                </p>
+
+                <p><span class="span1" th:text="${experiencia2.local}"></span> <span class="span2">Estágio</span>
+                </p>
+                <p><i class="fas fa-calendar-alt"></i> <span class="span1" th:text="${experiencia2.periodo}"></span>
+                </p>
+
+                <p><span class="span1" th:text="${experiencia3.local}"></span> <span class="span2">Estágio</span>
+                </p>
+                <p><i class="fas fa-calendar-alt"></i> <span class="span1" th:text="${experiencia3.periodo}"></span>
+                </p>
+            
+        </article><br>
+        <article>
+            <div class="formacao">
+                <h3>Formação Acadêmica</h3>
+                <hr>
+                <p><span class="span3" th:text="${formacao.curso}"></span> <span class="span4"
+                        th:text="${formacao.instituicao}"></span></p>
+
+                <p><span class="span3" th:text="${formacao2.curso}"></span> <span class="span4"
+                        th:text="${formacao2.instituicao}"></span></p>
+
+                <p><span class="span3" th:text="${formacao3.curso}"></span> <span class="span4"
+                        th:text="${formacao3.instituicao}"></span></p>
+            </div>
+        </article><br>
+        <article>
+            <div class="conhecimento">
+                <h3>Conhecimentos</h3>
+                <hr>
+                <span class="span5" th:text="${conhecimento.conhecimento}"></span> <span class="span5"
+                    th:text="${conhecimento1.conhecimento}"></span>
+                <span class="span5" th:text="${conhecimento2.conhecimento}"></span> <span class="span5"
+                    th:text="${conhecimento3.conhecimento}"></span>
+            </div>
+        </article><br>
+        <article>
+            <div class="idioma">
+                <h3>Idioma</h3>
+                <hr>
+                <table class="tabela">
+                    <tr>
+                        <th></th>
+                        <th>Leitura</th>
+                        <th>Escrita</th>
+                        <th>Conversação</th>
+                    </tr>
+                    <tr class="opacidade">
+                        <td>Inglês</td>
+                        <td>Bom</td>
+                        <td>Bom</td>
+                        <td>Bom</td>
+                    </tr>
+                    <tr>
+                        <td>Espanhol</td>
+                        <td>Ruim</td>
+                        <td>Ruim</td>
+                        <td>Ruim</td>
+                    </tr>
+                </table>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>
